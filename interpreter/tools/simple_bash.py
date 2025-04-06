@@ -41,6 +41,7 @@ class BashTool(BaseAnthropicTool):
         result = await sandbox.execute(command)
 
         if 'error' in result:
+            print(result['error'])
             return ToolResult(error=result['error'])
             
         # 记录安全日志

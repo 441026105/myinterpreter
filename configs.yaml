@@ -1,0 +1,8 @@
+sandbox:
+  image: python:3.11-slim
+  cpu_quota: 100000
+  cpu_period: 100000
+  memory_limit: 128M
+  network_mode: none
+  readonly_filesystem: false
+  timeout: 30
