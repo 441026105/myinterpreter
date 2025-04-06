@@ -27,7 +27,9 @@ class SandboxConfig:
 
     def load_config(self):
         import yaml
-        with open('configs.yaml', 'r') as f:
+        project_root = Path(__file__).resolve().parent.parent.parent  
+
+        with open(project_root/'configs.yaml', 'r') as f:
             sandbox_config = yaml.safe_load(f).get("sandbox")
             for item in sandbox_config:
                 setattr(self, item, sandbox_config[item])
